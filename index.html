@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>El Desarrollador Arqueólogo</title>
+    
+    <!-- Reveal.js Themes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css" id="theme">
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai.min.css">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Styles for "Tech/Developer" Vibe */
+        :root {
+            --accent-color: #00f2ff; /* Cyan Neon */
+            --secondary-color: #bd00ff; /* Purple Neon */
+            --bg-gradient: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
+        }
+
+        body {
+            background: var(--bg-gradient);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: none;
+        }
+
+        .reveal h1 {
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+        }
+
+        .reveal h3 {
+            color: var(--secondary-color);
+        }
+
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .icon-large {
+            font-size: 3em !important;
+            margin-bottom: 20px !important;
+            background: -webkit-linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .split-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .split-col {
+            flex: 1;
+        }
+
+        .log-code {
+            font-family: 'Courier New', monospace;
+            background: #111;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.6em !important;
+            text-align: left;
+            border: 1px solid #333;
+        }
+
+        ul li {
+            margin-bottom: 15px !important;
+        }
+        
+        .fragment.visible {
+            color: #fff;
+        }
+        
+        /* Progress bar color */
+        .reveal .progress span {
+            background: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- SLIDE 1: PORTADA -->
+            <section>
+                <h1 style="font-size: 2.5em;">Aumenta tu productividad en el desarrollo de software</h1>
+            </section>
+            <!-- SLIDE 1.1: PORTADA -->
+            <section>
+                <i class="fas fa-hat-cowboy icon-large"></i>
+                <h1 style="font-size: 2.5em;">El Desarrollador Arqueólogo</h1>
+                <p style="font-size: 0.6em; margin-top: 50px; color: #aaa;">
+                    Sobreviviendo al Staff Augmentation, Legacy Code y la falta de documentación.
+                </p>
+            </section>
+
+            <!-- SLIDE 2: EL PROBLEMA -->
+            <section>
+                <h2>La Realidad del "Paracaidista"</h2>
+                <div class="split-container">
+                    <div class="split-col">
+                        <ul>
+                            <li class="fragment">Entras a un proyecto en marcha (Staff Augmentation).</li>
+                            <li class="fragment">Cientos de artefactos.</li>
+                            <li class="fragment">Documentación obsoleta o inexistente.</li>
+                            <li class="fragment" style="color: var(--accent-color);"><strong>Expectativa: Productividad Inmediata.</strong></li>
+                        </ul>
+                    </div>
+                    <div class="split-col">
+                        <i class="fas fa-parachute-box icon-large" style="font-size: 5em !important;"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: MAPEO MENTAL -->
+            <section>
+                <section>
+                    <h2>Arqueología de Código</h2>
+                    <h3>Mapeando el Territorio</h3>
+                    <p>El objetivo no es leer todo el código, sino entender el flujo.</p>
+                </section>
+                
+                <section>
+                    <h3>1. El Mapa de Calor Mental</h3>
+                    <div class="highlight-box">
+                        <p><strong>Regla 80/20:</strong> Ignora el 80% del código "boilerplate". Concéntrate en el 20% que define el negocio.</p>
+                    </div>
+                    <ul>
+                        <li>Identifica los "Caminos Críticos" (Ej: Checkout, Login).</li>
+                        <li>Entiende el <em>Qué</em> hace el sistema antes del <em>Cómo</em> lo hace.</li>
+                        <li>Usa herramientas de visualización de dependencias.</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- SLIDE 4: LOGGING STRATEGY (NUEVO) -->
+            <section>
+                <h2>2. La Huella Digital</h2>
+                <h3 style="color: var(--accent-color);">Estrategia de Logging</h3>
+                
+                <div class="split-container">
+                    <div class="split-col" style="font-size: 0.7em;">
+                        <p class="fragment">El código puede mentir (comentarios viejos), <br><strong>los logs dicen la verdad.</strong></p>
+                        <ul>
+                            <li class="fragment"><strong>Ubicación:</strong> ¿Splunk, Datadog, AWS CloudWatch? Encuéntralos el Día 1.</li>
+                            <li class="fragment"><strong>Estandarización:</strong> ¿JSON o Texto plano?</li>
+                            <li class="fragment"><strong>Tracing:</strong> Busca el <code>Correlation-ID</code>.</li>
+                        </ul>
+                    </div>
+                    <div class="split-col">
+                        <div class="log-code">
+                            [INFO] 2023-10-27 10:00:01 <br>
+                            Transaction-ID: <span style="color:var(--secondary-color)">a1b2-c3d4-e5f6</span><br>
+                            Service: Payment-Gateway<br>
+                            Status: Processing...<br>
+                            User: 4521
+                        </div>
+                        <p style="font-size: 0.5em; margin-top:10px;"><em>"Si no puedes seguir la petición, estás ciego."</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: DEBUGGING -->
+            <section>
+                <h3>3. Debugging como Documentación</h3>
+                <div class="highlight-box">
+                    Haz que el código te cuente su historia ejecutándose.
+                </div>
+                <ul>
+                    <li>Leer código estático es lento y cognitivamente costoso.</li>
+                    <li>Usa <strong>Breakpoints</strong> para inspeccionar la estructura real de los datos.</li>
+                    <li>Analiza el <em>Call Stack</em> para entender quién llama a quién.</li>
+                </ul>
+            </section>
+            <!-- SLIDE 6: HERRAMIENTAS (IA & IDE) -->
+            <section>
+                <h2>Aceleradores Modernos</h2>
+                <div class="split-container">
+                    <div class="split-col fragment">
+                        <h3><i class="fas fa-robot"></i> IA como Copiloto</h3>
+                        <p style="font-size: 0.6em;">Usa ChatGPT/Copilot para <strong>explicar</strong>, no solo para escribir.</p>
+                        <blockquote style="font-size: 0.5em; background: #222; padding: 10px;">"Actúa como Senior Dev y explícame este método spaghetti en lenguaje natural."</blockquote>
+                    </div>
+                    <div class="split-col fragment">
+                        <h3><i class="fas fa-keyboard"></i> IDE Mastery</h3>
+                        <p style="font-size: 0.6em;">El mouse es lava.</p>
+                        <ul style="font-size: 0.6em;">
+                            <li>Navegación por símbolos > Búsqueda de texto.</li>
+                            <li>"Go to Definition" / "Find Usages".</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: SOFT SKILLS -->
+            <section>
+                <h2>Soft Skills en Staff Augmentation</h2>
+                <h3 style="color: #ffbd00;">Comunicación Estratégica</h3>
+                <ul>
+                    <li class="fragment"><strong>Gestión de Expectativas:</strong> Convierte el "No sé" en "Estoy investigando X para resolver Y".</li>
+                    <li class="fragment"><strong>Visibilidad:</strong> En remoto, si no comunicas, no estás trabajando.</li>
+                    <li class="fragment"><strong>Preguntas Quirúrgicas:</strong> Demuestra que ya investigaste (por ejemplo revisaste los logs) antes de preguntar.</li>
+                </ul>
+            </section>
+
+            <!-- SLIDE 8: RESUMEN / TAKEAWAY -->
+            <section>
+                <h2>Tu Kit de Supervivencia</h2>
+                <div class="highlight-box" style="border-left: 5px solid #0f0;">
+                    <ul style="list-style-type: none;">
+                        <li><i class="fas fa-check-circle" style="color: #0f0;"></i> <strong>Mapea</strong> los flujos críticos (no todo el código).</li>
+                        <li><i class="fas fa-check-circle" style="color: #0f0;"></i> <strong>Rastrea</strong> los logs (tu fuente de la verdad).</li>
+                        <li><i class="fas fa-check-circle" style="color: #0f0;"></i> <strong>Ejecuta</strong> el código para entenderlo (Debugging).</li>
+                        <li><i class="fas fa-check-circle" style="color: #0f0;"></i> <strong>Comunica</strong> progreso constantemente.</li>
+                    </ul>
+                </div>
+                <h3 style="margin-top: 50px;">¡A aumentar esa productividad!</h3>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Scripts for Reveal.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+
+    <script>
+        // Initialize Reveal
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
+            
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [ RevealHighlight, RevealNotes ]
+        });
+    </script>
+</body>
+</html>
